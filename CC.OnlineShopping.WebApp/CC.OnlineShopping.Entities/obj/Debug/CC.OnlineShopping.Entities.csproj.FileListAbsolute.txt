@@ -1,0 +1,10 @@
+c:\users\workstation\documents\visual studio 2015\Projects\CC.OnlineShopping.WebApp\CC.OnlineShopping.Entities\obj\Debug\CC.OnlineShopping.Entities.csprojResolveAssemblyReference.cache
+c:\users\workstation\documents\visual studio 2015\Projects\CC.OnlineShopping.WebApp\CC.OnlineShopping.Entities\bin\Debug\CC.OnlineShopping.Entities.dll.config
+c:\users\workstation\documents\visual studio 2015\Projects\CC.OnlineShopping.WebApp\CC.OnlineShopping.Entities\bin\Debug\CC.OnlineShopping.Entities.dll
+c:\users\workstation\documents\visual studio 2015\Projects\CC.OnlineShopping.WebApp\CC.OnlineShopping.Entities\bin\Debug\CC.OnlineShopping.Entities.pdb
+c:\users\workstation\documents\visual studio 2015\Projects\CC.OnlineShopping.WebApp\CC.OnlineShopping.Entities\bin\Debug\EntityFramework.dll
+c:\users\workstation\documents\visual studio 2015\Projects\CC.OnlineShopping.WebApp\CC.OnlineShopping.Entities\bin\Debug\EntityFramework.SqlServer.dll
+c:\users\workstation\documents\visual studio 2015\Projects\CC.OnlineShopping.WebApp\CC.OnlineShopping.Entities\bin\Debug\EntityFramework.xml
+c:\users\workstation\documents\visual studio 2015\Projects\CC.OnlineShopping.WebApp\CC.OnlineShopping.Entities\bin\Debug\EntityFramework.SqlServer.xml
+c:\users\workstation\documents\visual studio 2015\Projects\CC.OnlineShopping.WebApp\CC.OnlineShopping.Entities\obj\Debug\CC.OnlineShopping.Entities.dll
+c:\users\workstation\documents\visual studio 2015\Projects\CC.OnlineShopping.WebApp\CC.OnlineShopping.Entities\obj\Debug\CC.OnlineShopping.Entities.pdb

@@ -1,0 +1,25 @@
+﻿
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Berlock Shop</title>
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+</head>
+<body>
+    <center>
+        <img src="~/Images/Loading.gif" />
+    </center>
+    <script>
+        $(document).ready(function () {
+            $.getJSON("/Account/AddCart?username=@User.Identity.Name", function () {
+                console.log("passed");
+                setTimeout(function () { location.href = '/Home/Index'; }, 2000);
+            });
+        });
+    </script>
+</body>
+</html>
+

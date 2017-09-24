@@ -1,0 +1,16 @@
+c:\users\workstation\documents\visual studio 2015\Projects\CC.OnlineShopping.WebApp\CC.OnlineShopping.RepositoryEF\bin\Debug\CC.OnlineShopping.RepositoryEF.dll.config
+c:\users\workstation\documents\visual studio 2015\Projects\CC.OnlineShopping.WebApp\CC.OnlineShopping.RepositoryEF\bin\Debug\CC.OnlineShopping.RepositoryEF.dll
+c:\users\workstation\documents\visual studio 2015\Projects\CC.OnlineShopping.WebApp\CC.OnlineShopping.RepositoryEF\bin\Debug\CC.OnlineShopping.RepositoryEF.pdb
+c:\users\workstation\documents\visual studio 2015\Projects\CC.OnlineShopping.WebApp\CC.OnlineShopping.RepositoryEF\bin\Debug\CC.OnlineShopping.Entities.dll
+c:\users\workstation\documents\visual studio 2015\Projects\CC.OnlineShopping.WebApp\CC.OnlineShopping.RepositoryEF\bin\Debug\CC.OnlineShopping.Interfaces.dll
+c:\users\workstation\documents\visual studio 2015\Projects\CC.OnlineShopping.WebApp\CC.OnlineShopping.RepositoryEF\bin\Debug\EntityFramework.dll
+c:\users\workstation\documents\visual studio 2015\Projects\CC.OnlineShopping.WebApp\CC.OnlineShopping.RepositoryEF\bin\Debug\EntityFramework.SqlServer.dll
+c:\users\workstation\documents\visual studio 2015\Projects\CC.OnlineShopping.WebApp\CC.OnlineShopping.RepositoryEF\bin\Debug\CC.OnlineShopping.Entities.pdb
+c:\users\workstation\documents\visual studio 2015\Projects\CC.OnlineShopping.WebApp\CC.OnlineShopping.RepositoryEF\bin\Debug\CC.OnlineShopping.Interfaces.pdb
+c:\users\workstation\documents\visual studio 2015\Projects\CC.OnlineShopping.WebApp\CC.OnlineShopping.RepositoryEF\bin\Debug\EntityFramework.xml
+c:\users\workstation\documents\visual studio 2015\Projects\CC.OnlineShopping.WebApp\CC.OnlineShopping.RepositoryEF\bin\Debug\EntityFramework.SqlServer.xml
+c:\users\workstation\documents\visual studio 2015\Projects\CC.OnlineShopping.WebApp\CC.OnlineShopping.RepositoryEF\obj\Debug\CC.OnlineShopping.RepositoryEF.csprojResolveAssemblyReference.cache
+c:\users\workstation\documents\visual studio 2015\Projects\CC.OnlineShopping.WebApp\CC.OnlineShopping.RepositoryEF\obj\Debug\CC.OnlineShopping.RepositoryEF.dll
+c:\users\workstation\documents\visual studio 2015\Projects\CC.OnlineShopping.WebApp\CC.OnlineShopping.RepositoryEF\obj\Debug\CC.OnlineShopping.RepositoryEF.pdb
+C:\Users\Workstation\documents\visual studio 2015\Projects\CC.OnlineShopping.WebApp\CC.OnlineShopping.RepositoryEF\obj\Debug\CC.OnlineShopping.RepositoryEF.Migrations.InitialCreate.resources
+C:\Users\Workstation\documents\visual studio 2015\Projects\CC.OnlineShopping.WebApp\CC.OnlineShopping.RepositoryEF\obj\Debug\CC.OnlineShopping.RepositoryEF.csproj.GenerateResource.Cache

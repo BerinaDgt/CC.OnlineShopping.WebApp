@@ -1,0 +1,168 @@
+﻿@model IEnumerable<CC.OnlineShopping.Entities.Product>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div id="main">
+    <div class="container">
+        <div class="row">
+    <div class="cl">&nbsp;</div>
+            <!-- Sidebar -->
+            <div class="col-md-3">
+                <div id="sidebar">
+                    <!-- Search -->
+                    <div class="box search">
+                        <h2>Search by <span></span></h2>
+                        <div class="box-content">
+                            <form action="~/Store/Index">
+                                <label>Search</label>
+                                <input type="text" name="search" class="inline-field" />
+                                <label>Category</label>
+                                <select name="category" class="field category">
+                                    <option>All</option>
+                                    <option>Clothes</option>
+                                    <option>Shoes</option>
+                                    <option>Accessories</option>
+                                </select>
+                                <div class="inline-field">
+                                    <label>Price</label>
+                                    <input type="number" name="minPrice" class="field small-field minPrice" />
+                                    <label>to:</label>
+                                    <input type="number" name="maxPrice" class="field small-field maxPrice" />
+                                </div>
+                                <input type="submit" class="search-submit" value="Search" />
+                            </form>
+                        </div>
+                    </div>
+                    <!-- End Search -->
+                    <!-- Categories -->
+                    <div class="box categories">
+                        <h2>Categories <span></span></h2>
+                        <div class="box-content">
+                            <ul>
+                                <li><a href="#">Clothes</a></li>
+                                <li><a href="#">Shoes</a></li>
+                                <li class="last"><a href="#">Accessories</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- End Categories -->
+                </div>
+            </div>
+            <!-- End Sidebar -->
+    <!-- Content -->
+            <div class="col-md-9">
+                <div id="content">
+                    <!-- Content Slider -->
+                    <div id="slider" class="box">
+                        <div id="slider-holder">
+                            <ul class="fadein">
+                                <li><a href="#"><img src="~/Images/sliderimgs/shoes.png" alt="" /></a></li>
+                                <li><a href="#"><img src="~/Images/sliderimgs/accessories1.jpg" alt="" /></a></li>
+                                <li><a href="#"><img src="~/Images/sliderimgs/clothes.png" alt="" /></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- End Content Slider -->
+                    <!-- Products -->
+                    <div class="products">
+                        <div class="cl">&nbsp;</div>
+                        <ul>
+                            @foreach (var item in Model)
+                            {
+                                
+                                    <li>
+                                        <div class="col-md-12">
+                                            <a href="#"><img src="~/Images/ProductImages/@item.Image" alt="" /></a>
+                                            <div class="product-info">
+                                                <h3>@item.Title</h3>
+                                                <div class="product-desc">
+                                                    <h4>@item.Category</h4>
+
+                                                    <strong class="price">$@item.Price</strong><br />
+                                                    <div class="inline-llok">
+                                                        <button class="btn-sm btn-default"><span class="glyphicon glyphicon-credit-card"></span> @Html.ActionLink("BUY", "Buy", "Store", new { id = item.ProductId }, new { style = "text-decoration:none; color:black" })</button>
+                                                        @if (User.Identity.IsAuthenticated)
+                                                        {
+                                                            <button prodId="@item.ProductId" class="btn-sm btn-default addTo"><span class="glyphicon glyphicon-shopping-cart"></span> Add To Cart</button>
+                                                        }
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                   </li>
+                            }
+                        </ul>
+                        <div class="cl">&nbsp;</div>
+                    </div>
+                    <!-- End Products -->
+                </div>
+            </div>
+    <!-- End Content -->
+    
+    <div class="cl">&nbsp;</div>
+</div>    
+</div>
+</div>
+<!-- End Main -->
+<!-- Side Full -->
+<div class="side-full">
+    <div class="container">
+    <div class="row">
+    <!-- More Products -->
+        <div class="col-md-12">
+            <div class="more-products">
+                <div class="more-products-holder">
+                    <ul class="uList">
+                        @foreach (var item in ViewBag.ProductImgs)
+                        {
+                            <li class=""><a href="#"><img src="~/Images/ProductImages/@item.Image" alt="" /></a></li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+    <!-- End More Products -->
+    <!-- Text Cols -->
+        <div class="col-md-12">
+            <div class="cols">
+                <div class="cl">&nbsp;</div>
+                <div class="col-md-3">
+                    <div class="col">
+                        <h3 class="ico ico1">Donec imperdiet</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec imperdiet, metus ac cursus auctor, arcu felis ornare dui.</p>
+                        <p class="more"><a href="#" class="bul">Lorem ipsum</a></p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="col">
+                        <h3 class="ico ico2">Donec imperdiet</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec imperdiet, metus ac cursus auctor, arcu felis ornare dui.</p>
+                        <p class="more"><a href="#" class="bul">Lorem ipsum</a></p>
+                    </div>
+                    </div>
+                <div class="col-md-3">
+                    <div class="col">
+                        <h3 class="ico ico3">Donec imperdiet</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec imperdiet, metus ac cursus auctor, arcu felis ornare dui.</p>
+                        <p class="more"><a href="#" class="bul">Lorem ipsum</a></p>
+                    </div>
+                    </div>
+                <div class="col-md-3">
+                    <div class="col col-last">
+                        <h3 class="ico ico4">Donec imperdiet</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec imperdiet, metus ac cursus auctor, arcu felis ornare dui.</p>
+                        <p class="more"><a href="#" class="bul">Lorem ipsum</a></p>
+                    </div>
+                    </div>
+                    <div class="cl">&nbsp;</div>
+                </div>
+        </div>
+    <!-- End Text Cols -->
+</div>
+        </div>
+    </div>
+<!-- End Side Full -->
+
+

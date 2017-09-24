@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    
+    <link rel="stylesheet" href="~/Content/style.css" type="text/css" media="all" />
+</head>
+<body>
+    <div class="shell">
+        <div id="header">
+            <h1 id="logo"><a href="~/Home/Index">shoparound</a></h1>
+            @if (User.Identity.IsAuthenticated) {
+                Html.RenderAction("Cart", "Home");
+           }
+            <!-- Navigation -->
+            <div id="navigation">
+                <ul>
+                    <li><a href="~/Home/Index" class="navH">Home</a></li>
+                    <li><a href="~/Store/Index" class="navH">The Store</a></li>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li><a href="#">@Html.ActionLink("My Account", "UserAccount", "Account")</a></li>
+                        <li><a href="~/Account/Logout">Log Out</a></li>
+                    }
+                    else
+                    {
+                        <li>@Html.ActionLink("Login", "Login", "Account")</li>
+                        <li>@Html.ActionLink("Register", "Register", "Account")</li>
+                    }
+                </ul>
+            </div>
+            <!-- End Navigation -->
+        </div>
+            @RenderBody()
+        <hr />
+        <div id="footer">
+            <p class="left"> <a href="#">Home</a> <span>|</span> <a href="#">Support</a> <span>|</span> <a href="#">My Account</a> <span>|</span> <a href="#">The Store</a> <span>|</span> <a href="#">Contact</a> </p>
+            <p class="right"> &copy; @DateTime.Now.Year Berlock.
+        </div>
+        <!-- End Footer -->
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+    @RenderSection("js", false)
+</body>
+</html>

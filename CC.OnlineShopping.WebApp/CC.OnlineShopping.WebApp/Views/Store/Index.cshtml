@@ -1,0 +1,84 @@
+﻿@model IEnumerable<CC.OnlineShopping.Entities.Product>
+
+@{
+    ViewBag.Title = "Store";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="box search">
+                <h2>Search by <span></span></h2>
+                <div class="box-content inli">
+                    <form>
+                        <div class="col-md-4">
+                            <label>Search</label>
+                            <input type="text" name="search" class="inline-field" />
+                        </div>
+                        <div class="col-md-4">
+                            <label>Category</label>
+                            <select name="category" class="field">
+                                <option>All</option>
+                                <option>Clothes</option>
+                                <option>Shoes</option>
+                                <option>Accessories</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="inline-field">
+                                <label>Price</label>
+                                <input type="number" name="minPrice" class="field small-field" />
+                                <label>to:</label>
+                                <input type="number" name="maxPrice" class="field small-field" />
+                            </div>
+                        </div>
+                        <input type="submit" class="search-submit" value="Search" />
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="products">
+            <div class="cl">&nbsp;</div>
+            <ul>
+            @foreach (var item in Model)
+            {
+                    <li>
+                        <div class="col-md-12">
+                            <a href="#"><img src="~/Images/ProductImages/@item.Image" alt="" /></a>
+                            <div class="product-info">
+                                <h3>@item.Title</h3>
+                                <div class="product-desc">
+                                    <h4>@item.Category</h4>
+
+                                    <strong class="price">$@item.Price</strong><br />
+                                    <div class="inline-llok">
+                                        <button class="btn-sm btn-default"><span class="glyphicon glyphicon-credit-card"></span> @Html.ActionLink("BUY", "Buy", new { id = item.ProductId }, new { style = "text-decoration:none; color:black" })</button>
+                                        @if (User.Identity.IsAuthenticated)
+                                        {
+                                        <button prodId="@item.ProductId" class="btn-sm btn-default addTo"><span class="glyphicon glyphicon-shopping-cart"></span> Add To Cart</button>
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>
+</div>
+
+@section js {
+        
+    <script>
+        $(".addTo").on("click", function () {
+            var prodId = $(this).attr("prodId");
+
+            $.get("/Account/AddToCart?prodId=" + prodId, function () {
+                console.log("great for you");
+            })
+        });
+    </script>
+    
+    }
+

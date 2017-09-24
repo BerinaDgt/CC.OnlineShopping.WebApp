@@ -1,0 +1,91 @@
+﻿@model CC.OnlineShopping.Entities.User
+
+@{
+    ViewBag.Title = "My Cart";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="profile">
+                <div class="span12">
+                    <div class="well well-small clearfix">
+                        <div class="row-fluid">
+                            <div class="col-md-6">
+                                <div class="span4">
+                                    <h2>@Model.Name @Model.LastName</h2>
+                                    <ul class="unstyled">
+                                        <li><i class="glyphicon glyphicon-envelope"></i> @Model.Email</li>
+                                    </ul>
+                                    <button class="btn-lg btn-default">@Html.ActionLink("Add new Product", "Create", "Product", null, new { style = "text-decoration:none; color:black" })</button>
+                                    <button class="btn-sm btn-default"><span class="glyphicon glyphicon-shopping-cart"></span> @Html.ActionLink("My Cart", "Cart", null, new { style = "text-decoration:none; color:black" })</button>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="span6">
+                                    <ul class="inline stats">
+                                        <li class="col-md-4">
+                                            <span>@Model.Product.Count()</span>
+                                            Products
+                                        </li>
+                                        <li class="col-md-4">
+                                            <span>@Model.Product.Sum(p => p.Sold)</span>
+                                            Products Sold
+                                        </li>
+                                        <li class="col-md-4">
+                                            <span>@Model.Credits</span>
+                                            Credits
+                                        </li>
+                                    </ul>
+                                    <div>
+                                        <!--/span6-->
+                                    </div><!--/row-->
+                                </div>
+                            </div>
+                            <!--Body content-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="products">
+            <div class="cl">&nbsp;</div>
+            <ul>
+                @foreach (var item in Model.Cart.ProductsToCart.OrderByDescending(pc => pc.ID).Select(pc => pc.Product))
+                {
+                    <li class="parent">
+                        <div class="col-md-12">
+                            <a href="#"><img src="~/Images/ProductImages/@item.Image" alt="" /></a>
+                            <div class="product-info">
+                                <h3>@item.Title</h3>
+                                <div class="product-desc">
+                                    <h4>@item.Category</h4>
+
+                                    <strong class="price">$@item.Price</strong><br />
+                                    <button prodId="@item.ProductId" class="btn-sm btn-default"><span class="glyphicon glyphicon-credit-card"></span> @Html.ActionLink("BUY", "Buy", "Store", new { id = item.ProductId }, new { style = "text-decoration:none; color:black" })</button>
+                                    <button prodId="@item.ProductId" class="btn-sm btn-default"><span class="glyphicon glyphicon-remove"></span> Remove from Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>
+</div>
+
+@section js {
+    <script>
+        $(".btn-sm").on("click", function () {
+            var prodId = $(this).attr("prodId");
+            var prodToCart = $(this).closest(".parent").attr("class", "fshihe");
+
+            $.get("/Account/Remove?prodId=" + prodId, function () {
+                $(".fshihe").hide(1000);
+            });
+        });
+    </script>
+    }
+
+
+

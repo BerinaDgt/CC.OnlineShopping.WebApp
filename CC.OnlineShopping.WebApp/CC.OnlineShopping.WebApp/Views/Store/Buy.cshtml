@@ -1,0 +1,77 @@
+﻿@model CC.OnlineShopping.Entities.Product
+
+@{
+    ViewBag.Title = "Buy Product";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="products col-md-4">
+            <div class="cl">&nbsp;</div>
+            <ul>
+                    <li>
+                        <div class="col-md-12">
+                            <a href="#"><img src="~/Images/ProductImages/@Model.Image" alt="" /></a>
+                            <div class="product-info">
+                                <h3>@Model.Title</h3>
+                                <div class="product-desc">
+                                    <h4>@Model.Category</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+            </ul>
+        </div>
+        <div class="col-md-4">
+            <h4>Product is sold: @Model.Sold times</h4>
+            <h4><strong class="price">Price: $@Model.Price</strong></h4>
+            <h5>Product by: @Model.User.Name</h5>
+            <h5>Date posted: @Model.DateCreated</h5>
+
+            <button class="btn-lg btn-default buy">BUY</button>
+
+            <div id="panel">
+                <h2 class="ok"></h2>
+                <p class="msg"></p>
+            </div>
+        </div>
+</div>
+
+@section js{
+    @if (User.Identity.IsAuthenticated) { 
+        <script>
+            $(".buy").on("click", function () {
+                $("#panel").slideDown();
+                $.get("/Store/Buys?prodId=@Model.ProductId&sold=@Model.Sold&price=@Model.Price&owner=@Model.User.Name", function () {
+                    $(".ok").text("Order Completed!");
+                    $(".msg").text("Your delivery will recieve in 7 to 8 days, thank you!");
+                });
+            });
+        </script>
+    }
+    else
+    {
+        <script>
+            $(".buy").on("click", function () {
+                $("#panel").slideDown();
+                    $(".ok").text("Oooops.. Sorry!");
+                    $(".msg").text("You need to register in order to trade in our site!");
+            });
+        </script>
+    }
+}
+
+@functions{
+    public string Sold(int? times)
+    {
+        switch (times)
+        {
+            case null:
+                return "none";
+
+            default: return $"{times} times";
+
+        }
+    }
+
+}

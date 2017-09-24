@@ -1,0 +1,24 @@
+﻿@model IEnumerable<CC.OnlineShopping.Entities.Product>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="container-fluid">
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-md-4">
+                <div></div>
+                <h2>@item.Title</h2>
+                <h4>@item.Price &euro;</h4>
+                <img src="~/Images/ProductImages/@item.Image" width="100" height="150" />
+
+                <p>@item.Category</p>
+
+                <button>@Html.ActionLink("Edit Product", "Edit", new { id = item.ProductId }, new { style = "text-decoration:none; color:black" })</button>
+                <button>@Html.ActionLink("Delete Product", "Delete", new { id = item.ProductId }, new { style = "text-decoration:none; color:black" })</button>
+            </div>
+        }
+    </div>
+</div>
